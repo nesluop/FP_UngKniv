@@ -1,17 +1,38 @@
 module a1
 // 1.1
-let sqr n = failwith "not implemented"
+let sqr n = n*n
 // 1.2
-let pow a b = failwith "not implemented"
+let pow a b = System.Math.Pow(a,b)
 
 // 1.3 / HR 1.1
-let g n = failwith "not implemented"
+let g n = n+4
 
 // 1.4 / HR 1.2
-let h(x:float, y:float) = failwith "not implemented"
+let h(x:float, y:float) = System.Math.Sqrt((x**2.0+y**2.0))
 
 // 1.5 / HR 1.4
-let rec f = failwith "not implemented"
+let rec f = function
+    | 0 -> 0
+    | n -> n + f(n-1)
+
+f 4;;
+
+(*
+    f 4
+    4 + f(4-1)
+    4 + f(3)
+    4 + 3 + f(3-1)
+    4 + 3 + f(2)
+    4 + 3 + 2 + f(2-1)
+    4 + 3 + 2 + f(1)
+    4 + 3 + 2 + 1 + f(1-1)
+    4 + 3 + 2 + 1 + f(0)
+    4 + 3 + 2 + 1 + 0
+    4 + 3 + 2 + 1
+    4 + 3 + 3
+    4 + 6
+    10
+*)
 
 // 1.6 / HR 1.5
 let rec fib = failwith "not implemented"
