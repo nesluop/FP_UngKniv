@@ -57,11 +57,6 @@ let rec sum = function
     | (m,n) -> m + n + sum(m,(n-1))
 
 (*
-    sum(2,2)
-    sum(2,2-1)
-    sum(2,1-1) -> sum(2,0) = 2
-    2 + 2 + 2 + 1 + 2 
-
     Recursion formula
     for integers m ≥ 0 and n ≥ 0
     a(m,0) = m
