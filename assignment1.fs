@@ -33,7 +33,23 @@ let rec f = function
 *)
 
 // 1.6 / HR 1.5
-let rec fib = failwith "not implemented"
+let rec fib = function
+    | 0 -> 0
+    | 1 -> 1
+    | n -> fib(n-1) + fib(n-2)
+
+(*
+    fib 4
+    fib(4-1) + fib(4-2)
+    fib(3) + fib(2)
+    fib(3-1) + fib(3-2) + fib(2-1) + fib(2-2)
+    fib(2) + fib(1) + fib(1) + fib(0)
+    fib(2-1) + fib(2-2) + 1 + 1 + 0
+    fib(1) + fib(0) + 1 + 1 + 0
+    1 + 0 + 1 + 1 + 0
+    1 + 1 + 1
+    3
+*)
 
 // 1.7 / HR 1.6
 let rec sum(m,n) = failwith "not implemented"
