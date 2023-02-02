@@ -15,8 +15,6 @@ let rec f = function
     | 0 -> 0
     | n -> n + f(n-1)
 
-f 4;;
-
 (*
     f 4
     4 + f(4-1)
