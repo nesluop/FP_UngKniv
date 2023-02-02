@@ -52,7 +52,21 @@ let rec fib = function
 *)
 
 // 1.7 / HR 1.6
-let rec sum(m,n) = failwith "not implemented"
+let rec sum = function
+    | (m,0) -> m
+    | (m,n) -> m + n + sum(m,(n-1))
+
+(*
+    sum(2,2)
+    sum(2,2-1)
+    sum(2,1-1) -> sum(2,0) = 2
+    2 + 2 + 2 + 1 + 2 
+
+    Recursion formula
+    for integers m ≥ 0 and n ≥ 0
+    a(m,0) = m
+    a(m,n) = m + n + a(m,n-1)
+*)
 
 // 1.8 / HR 1.7
 
