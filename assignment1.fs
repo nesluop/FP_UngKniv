@@ -105,5 +105,7 @@ let g b = (f b) + a;;
 let dup a:string = a+a
 
 // 1.11 Duplicate string n times.
-let rec dupn (text:string) n = failwith "not implemented"
+let rec dupn = function 
+    | ((text: string), 1) -> text
+    | ((text: string), n) -> text + dupn(text, n-1)
 
