@@ -63,12 +63,46 @@ let rec sum = function
     a(m,n) = m + n + a(m,n-1)
 *)
 
-// 1.8 / HR 1.7
+// 1.8 / HR 1.7'
+
+(*
+    (System.Math.PI, fact -1)       -> type: error? System.Math.PI is float and fact -1 is int
+    fact(fact 4)                    -> type: int
+    power(System.Math.PI, fact 2)   -> type: float or error ?
+    (power, fact)                   -> type: int
+*)
 
 // 1.9 / HR 1.8
+let a = 5;;
+let f a = a + 1;;
+let g b = (f b) + a;;
+(*
+    let a = 5;;
+    let f a = a + 1;;
+    let g b = (f b) + a;;
+
+    environment:
+        | a → 5         |
+    env1| f → (a, 1)    |
+        | g → (f. b. a) |
+
+    evaluation for f 3:
+        f(3)
+        3 + 1
+        4
+
+    evaluation for g 3:
+        g(3)
+        f(3) + a
+        3 + 1 + a
+        4 + a
+        4 + 5 ? (Synes det er lidt uklart her)
+
+
+*)
 
 // 1.10 Duplicate strings: dup:string -> string
-let dup a:string = failwith "not implemented"
+let dup a:string = a+a
 
 // 1.11 Duplicate string n times.
 let rec dupn (text:string) n = failwith "not implemented"
