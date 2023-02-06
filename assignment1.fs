@@ -66,10 +66,25 @@ let rec sum = function
 // 1.8 / HR 1.7'
 
 (*
-    (System.Math.PI, fact -1)       -> type: error? System.Math.PI is float and fact -1 is int
-    fact(fact 4)                    -> type: int
-    power(System.Math.PI, fact 2)   -> type: float or error ?
-    (power, fact)                   -> type: int
+    For this assignment we reccursively definition function for fact and power as defined
+    in the lecture slides.
+
+    (System.Math.PI, fact -1)       
+    --> System.Math.PI: float * fact -1: int -> no output since there is no function
+        to explain what to do with the values in the parenthesis
+
+    fact(fact 4) 
+    --> int, since fact 4 is an int and therefore fact(fact 4) 
+        is an int
+
+    power(System.Math.PI, fact 2)
+    --> System.Math.PI: float * fact 2: int -> power(System.Math.PI, fact 2): float
+    
+    (power, fact)
+    --> (power: float * int -> float) * (fact: int -> int) no output since there is no function
+        to explain what to do with the values in the parenthesis
+        As for the input, both power and fact is undefined in this case, so
+        we chose to determine the input types as defined above
 *)
 
 // 1.9 / HR 1.8
@@ -82,9 +97,9 @@ let g b = (f b) + a;;
     let g b = (f b) + a;;
 
     environment:
-        | a → 5         |
-    env1| f → (a, 1)    |
-        | g → (f. b. a) |
+        | a → 5         | --> 5 is bound to a 
+    env1| f → (a, 1)    | --> a and 1 are bound to f by the function a + 1
+        | g → (f, b, a) | --> f, b and a are bound to g by the function (f b) + a
 
     evaluation for f 3:
         f(3)
@@ -96,9 +111,8 @@ let g b = (f b) + a;;
         f(3) + a
         3 + 1 + a
         4 + a
-        4 + 5 ? (Synes det er lidt uklart her)
-
-
+        4 + 5 
+        9
 *)
 
 // 1.10 Duplicate strings: dup:string -> string
@@ -106,6 +120,6 @@ let dup a:string = a+a
 
 // 1.11 Duplicate string n times.
 let rec dupn = function 
-    | ((text: string), 1) -> text
+    | ((text: string), 0) -> ""
     | ((text: string), n) -> text + dupn(text, n-1)
 
