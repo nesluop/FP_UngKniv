@@ -1,7 +1,8 @@
 module a2
 
 // 2.1 time difference:
-let timediff (h0, m0) (h1, m1) = failwith "not implemented"
+let timediff (h0, m0) (h1, m1) = 
+    (h1*60 + m1)-(h0*60 + m0) //virker ikke hvis den går over midnat, lol
 
 // 2.2 function minutes
 let minutes (h, m) = failwith "not implemented"
