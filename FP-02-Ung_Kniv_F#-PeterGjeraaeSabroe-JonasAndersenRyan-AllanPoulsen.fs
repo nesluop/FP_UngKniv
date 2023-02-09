@@ -37,6 +37,36 @@ let rec bin = function
 
 // 2.5 / HR 2.9
 
+(*
+let rec f = function
+| (0,y) -> y
+| (x,y) -> f(x-1, x*y);;
+
+1. Type of f: int * int -> int
+2. the evaluation of f terminates for the y argument
+3. Evaluation for f(2,3).
+    f(2,3)
+        f(2-1, 2*3)
+        f(1, 6)
+            f(1-1, 1*6)
+            f(0, 6)
+            6
+        6
+    6
+
+    f(3,3)
+        f(3-1, 3*3)
+        f(2, 9)
+            f(2-1, 2*9)
+            f(1, 18)
+                f(0, 18)
+                18
+            18
+        18
+    18
+4. The mathematical meaning of f(x,y): x! * y
+*)
+
 // 2.6 / HR 2.10
 
 // 2.7 / HR 2.13 Curry and Uncurry
