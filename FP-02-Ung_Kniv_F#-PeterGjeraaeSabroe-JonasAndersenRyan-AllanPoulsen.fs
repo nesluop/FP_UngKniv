@@ -64,10 +64,23 @@ let rec f = function
             18
         18
     18
+
 4. The mathematical meaning of f(x,y): x! * y
 *)
 
 // 2.6 / HR 2.10
+
+(*
+    let test(c,e) = if c then e else 0;;
+
+    1. type of test = boolean * int -> int
+    2. test(false, fact(-1)) evaluates to an error
+    3. Where "if false then fact -1 else 0" evaluates to 0
+        The reason is that in 2. the arguments we put in get evaluated before the function is computed
+        And you can't do fact(-1)
+        But the 3. option tries to compute fact -1 only if false. So of true, it will never try fact -1
+
+*)
 
 // 2.7 / HR 2.13 Curry and Uncurry
 let curry f x y = failwith "not implemented"
