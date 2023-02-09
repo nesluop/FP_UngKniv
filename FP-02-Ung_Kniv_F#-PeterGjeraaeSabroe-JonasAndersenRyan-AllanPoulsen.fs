@@ -14,7 +14,20 @@ let rec pow =
     | ((text), n) -> text + dupn(text, n-1)
 
 // 2.4 / HR 2.8
-let rec bin (a,b) = failwith "not implemented"
+let rec bin = function          
+    | (_, 0) -> 1
+    | (a, b) when a = b -> 1
+    | (a, b) ->  bin(a-1, b-1) + bin(a-1, b)
+
+// let rec bin (a,b) = 
+//     match (a,b) with
+//     | (_, 0) -> 1
+//     | (a, b) when a = b -> 1
+//     | (a, b) ->  bin(a-1, b-1) + bin(a-1, b)
+
+// let rec bin = function 
+//     |(_,0) -> 1
+//     |(a,b) -> if a=b then 1 else bin(a-1, b-1) + bin(a-1, b)
 
 // 2.5 / HR 2.9
 
