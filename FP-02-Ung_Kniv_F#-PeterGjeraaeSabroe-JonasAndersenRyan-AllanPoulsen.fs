@@ -19,6 +19,7 @@ let rec bin = function
     | (a, b) when a = b -> 1
     | (a, b) ->  bin(a-1, b-1) + bin(a-1, b)
 
+
 // let rec bin (a,b) = 
 //     match (a,b) with
 //     | (_, 0) -> 1
@@ -28,6 +29,11 @@ let rec bin = function
 // let rec bin = function 
 //     |(_,0) -> 1
 //     |(a,b) -> if a=b then 1 else bin(a-1, b-1) + bin(a-1, b)
+
+// let rec fact = function 
+//     | 1 -> 1
+//     | n -> n * fact(n-1)let bin (n, k) = 
+//         (fact(n-1)/(fact(k-1)*(fact((n-1)-(k-1))))) + (fact(n-1)/(fact(k)*fact(n-1-k)))
 
 // 2.5 / HR 2.9
 
