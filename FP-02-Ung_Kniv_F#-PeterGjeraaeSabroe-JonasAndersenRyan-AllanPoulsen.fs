@@ -83,7 +83,13 @@ let rec f = function
 *)
 
 // 2.7 / HR 2.13 Curry and Uncurry
-let curry f x y = failwith "not implemented"
+let curry f x y = f (x,y)
+// what we actually do is we take a curried form f x y and uncurry it into tupled form
+// this means that we tell F# that istead of 
+// "the funcition curry is: f, a function that returns a function x that returns a function y, that reaturns a value"
+// now we say "curry is a function that takes the function f and puts the tuple "x,y) into it
 
-let uncurry g (x,y) = failwith "not implemented"
+
+let uncurry g (x,y) = g x y
+// here we kinda do the opposite
 
