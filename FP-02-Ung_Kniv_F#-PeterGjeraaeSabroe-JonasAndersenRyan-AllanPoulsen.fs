@@ -9,9 +9,9 @@ let minutes = timediff(0,0) // timediff ved den skal have 2 arguments, så dem b
     // this gcould just as well have been let minutes (h,m) = h*60+m
 
 // 2.3 / HR 2.2  - we are using some type inference
-let rec pow =
-    | ((text), 0) -> ""
-    | ((text), n) -> text + dupn(text, n-1)
+let rec pow = function
+    |(s, 0) -> ""
+    |(s, n) -> s + pow(s, n-1)
 
 // 2.4 / HR 2.8
 let rec bin = function          
