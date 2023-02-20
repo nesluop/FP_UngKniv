@@ -51,6 +51,37 @@ let (^-^) (a, b, c) (d, e, f) =
 type Money = {pound : int; shilling : int; pence : int};;
 // Money record addition
 let (|+|) a b = failwith "not implemented"
+
+type Money = {pound : int; shilling : int; pence : int};;
+
+let (^+^) (a, b, c) (d, e, f) = 
+    let pe = (c + f) % 12
+    let sh = ((b + e) + (int ((c + f)) /12)) % 20
+    let po =  a + d + ((b + e + int ((c + f)) /12) / 20)
+    {pound = po; shilling = sh; pence = pe}
+
+// let (^-^) (a, b, c) (d, e, f) = 
+//     let pence1 = a*20*12 + b*12 + c
+//     let pence2 = d*20*12 + e*12 + f
+//     let penceDiff = pence1-pence2
+//     let po = int (penceDiff /(20*12))
+//     let sh = int ((penceDiff - po*20*12)/12)
+//     let pe = int (penceDiff - po*20*12 - sh * 12)
+//     {pound = po; shilling  = sh; pence = pe}
+
+
+
+let (|+|) moneyA moneyB =  
+    let pe = (moneyA.pence + moneyB.pence) % 12
+    let sh = ((moneyA.shilling + moneyB.shilling) + (int ((moneyA.pence + moneyB.pence)) /12)) % 20
+    let po =  moneyA.pound + moneyB.pound + ((moneyA.shilling + moneyB.shilling + int ((moneyA.pence + moneyB.pence)) /12) / 20)
+    {pound = po; shilling = sh; pence = pe}
+    
+let moneyA = {pound = 10; shilling = 4; pence = 7};;
+let moneyB = {pound = 4; shilling = 13; pence = 5};;     
+
+
+
 // Money record subtraction
 let (|-|) a b = failwith "not implemented"
 
