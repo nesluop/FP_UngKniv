@@ -49,7 +49,8 @@ let (^-^) (a, b, c) (d, e, f) =
     (pound, shilling, pence)
 
 type Money = {pound : int; shilling : int; pence : int};;
-// Money record addition
+// Money record addition - test
+
 let (|+|) a b = failwith "not implemented"
 
 type Money = {pound : int; shilling : int; pence : int};;
