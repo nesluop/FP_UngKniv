@@ -45,8 +45,8 @@ let rec combinePair = function
 // let (^+^) a b = failwith "not implemented"
 let (^+^) (a, b, c) (d, e, f) = 
     let pence = (c + f) % 12
-    let shilling = (b + e) + (int ((c + f)) /12) % 20
-    let pound =  a + d + ((b + e + int ((c + f)) /12) / 20)
+    let shilling = (b + e + (int (c + f) /12)) % 20
+    let pound =  a + d + ((b + e + int (c + f) /12) / 20)
     (pound, shilling, pence)
 
 
